@@ -4,7 +4,7 @@ export const projectsSection: ProjectsSection = {
   eyebrow: "Projects",
   title: "Selected work with room to grow",
   description:
-    "Each project is stored in one data file today and can move behind an API later without changing the UI.",
+    "Each project stored here can be the path to a new milestone in future with a bigger opportunity.",
   detailButtonText: "View Details",
   codeButtonText: "Code",
   backLinkText: "Back to projects",
@@ -31,30 +31,30 @@ export const projectsData: Project[] = [
     challenges: ["Real-time messaging reliability", "handling concurrent users", "managing database consistency", "ensuring smooth performance and scalability"],
     featured: true,
   },
- {
-  id: 2,
-  slug: "photo-gallery-app",
-  title: "Photo gallery app",
-  shortDescription: "A React-based nature photography gallery with category browsing, authentication, and a contact form.",
-  description:
-    "This project is a polished photo gallery experience built with React and Redux. It allows users to explore nature-themed collections by category, navigate between routes, sign in for protected interactions, and contact the site owner through a functional form.",
-  image: "/images/projects/photo-gallery-app.png",
-  gallery: ["/images/projects/photo-gallery-app.png"],
-  technology: ["React", "Redux", "React Router", "Bootstrap", "EmailJS"],
-  github: "https://github.com/pronoyc11/Photo-gallery-app.git",
-  live: "https://photo-gallery-app-51ad5.web.app/",
-  futurePlans: [
-    "Add user-uploaded images",
-    "Improve search and filtering",
-    "Expand category pages and curated collections"
-  ],
-  challenges: [
-    "Managing shared state across image browsing and authentication",
-    "Creating a smooth multi-route experience for gallery navigation",
-    "Integrating a working contact form without breaking the UI"
-  ],
-  featured: true
-},
+  {
+    id: 2,
+    slug: "photo-gallery-app",
+    title: "Photo gallery app",
+    shortDescription: "A React-based nature photography gallery with category browsing, authentication, and a contact form.",
+    description:
+      "This project is a polished photo gallery experience built with React and Redux. It allows users to explore nature-themed collections by category, navigate between routes, sign in for protected interactions, and contact the site owner through a functional form.",
+    image: "/images/projects/photo-gallery-app.png",
+    gallery: ["/images/projects/photo-gallery-app.png"],
+    technology: ["React", "Redux", "React Router", "Bootstrap", "EmailJS"],
+    github: "https://github.com/pronoyc11/Photo-gallery-app.git",
+    live: "https://photo-gallery-app-51ad5.web.app/",
+    futurePlans: [
+      "Add user-uploaded images",
+      "Improve search and filtering",
+      "Expand category pages and curated collections"
+    ],
+    challenges: [
+      "Managing shared state across image browsing and authentication",
+      "Creating a smooth multi-route experience for gallery navigation",
+      "Integrating a working contact form without breaking the UI"
+    ],
+    featured: true
+  },
   {
     id: 3,
     slug: "hotel-booking-app",
