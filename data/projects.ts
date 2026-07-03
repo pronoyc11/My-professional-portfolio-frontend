@@ -1,6 +1,6 @@
-import type { Project } from "@/types/portfolio";
+import type { Project, ProjectsSection } from "@/types/portfolio";
 
-export const projectsSection = {
+export const projectsSection: ProjectsSection = {
   eyebrow: "Projects",
   title: "Selected work with room to grow",
   description:

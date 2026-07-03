@@ -1,4 +1,6 @@
-export const aboutData = {
+import type { AboutData } from "@/types/portfolio";
+
+export const aboutData: AboutData = {
   eyebrow: "About Me",
   title: "Passionate Full Stack Developer",
   paragraph1:

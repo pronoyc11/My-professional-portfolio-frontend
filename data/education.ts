@@ -1,6 +1,6 @@
-import type { TimelineItem } from "@/types/portfolio";
+import type { EducationSection, TimelineItem } from "@/types/portfolio";
 
-export const educationSection = {
+export const educationSection: EducationSection = {
   eyebrow: "Education",
   title: "Learning built through consistent practice",
   description: "A timeline of focused learning, project work, and technical growth.",

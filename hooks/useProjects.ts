@@ -4,7 +4,7 @@ import { projectService } from "@/services/project.service";
 import type { Project, ProjectsSection } from "@/types/portfolio";
 
 export function useProjects() {
-  const { data, loading, error, refetch } = useAsyncData<Project[]>(() => projectService.getProjects());
+  const { data, loading, error, refetch } = useAsyncData<Project[]>(() => Promise.resolve(projectService.getProjects()));
   const [section, setSection] = useState<ProjectsSection | null>(null);
 
   useEffect(() => {

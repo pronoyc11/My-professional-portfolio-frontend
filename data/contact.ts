@@ -1,6 +1,7 @@
+import type { ContactData } from "@/types/portfolio";
 import { siteData } from "./site";
 
-export const contactData = {
+export const contactData: ContactData = {
   email: siteData.email,
   phone: siteData.phone,
   whatsapp: siteData.whatsapp,

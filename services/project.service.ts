@@ -1,7 +1,11 @@
-import { projectsData } from "@/data/projects";
+import { projectsData, projectsSection } from "@/data/projects";
 
 export const projectService = {
   getAllProjects() {
+    return projectsData;
+  },
+
+  getProjects() {
     return projectsData;
   },
 
@@ -11,5 +15,9 @@ export const projectService = {
 
   getProjectBySlug(slug: string) {
     return projectsData.find((project) => project.slug === slug);
+  },
+
+  getProjectSection() {
+    return Promise.resolve(projectsSection);
   },
 };

@@ -1,6 +1,6 @@
-import type { SkillGroup } from "@/types/portfolio";
+import type { SkillGroup, SkillsSection } from "@/types/portfolio";
 
-export const skillsSection = {
+export const skillsSection: SkillsSection = {
   eyebrow: "Skills",
   title: "Modern tools, practical execution",
   description:

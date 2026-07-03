@@ -1,4 +1,6 @@
-export const siteData = {
+import type { SiteData } from "@/types/portfolio";
+
+export const siteData: SiteData = {
   name: "Pronoy Chowdhury",
   designation: "Full Stack Web Developer",
   email: "pronoy@example.com",

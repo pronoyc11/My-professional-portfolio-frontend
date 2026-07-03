@@ -1,6 +1,6 @@
-import type { TimelineItem } from "@/types/portfolio";
+import type { ExperienceSection, TimelineItem } from "@/types/portfolio";
 
-export const experienceSection = {
+export const experienceSection: ExperienceSection = {
   eyebrow: "Experience",
   title: "Professional journey",
   description: "Roles, collaborations, and opportunities will live here as the portfolio grows.",

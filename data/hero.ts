@@ -1,6 +1,7 @@
+import type { HeroData } from "@/types/portfolio";
 import { siteData } from "./site";
 
-export const heroData = {
+export const heroData: HeroData = {
   greeting: "Hello, I'm",
   name: siteData.name,
   designation: siteData.designation,

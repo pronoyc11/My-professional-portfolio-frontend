@@ -1,4 +1,6 @@
-export const socialData = {
+import type { SocialData } from "@/types/portfolio";
+
+export const socialData: SocialData = {
   github: "https://github.com/dashboard",
   linkedin: "https://www.linkedin.com/in/pronoyc11/",
   facebook: "https://www.facebook.com/profile.php?id=61551092040446",

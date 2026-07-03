@@ -3,7 +3,7 @@ import { siteService } from "@/services/site.service";
 import type { SiteData } from "@/types/portfolio";
 
 export function useSite() {
-  const { data, loading, error, refetch } = useAsyncData<SiteData>(() => siteService.getSiteData());
+  const { data, loading, error, refetch } = useAsyncData<SiteData>(() => Promise.resolve(siteService.getSiteData()));
 
   return {
     site: data,
