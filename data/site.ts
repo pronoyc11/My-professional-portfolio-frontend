@@ -2,7 +2,7 @@ import type { SiteData } from "@/types/portfolio";
 
 export const siteData: SiteData = {
   name: "Pronoy Chowdhury",
-  designation: "Full Stack Web Developer",
+  designation: "Backend Engineer",
   email: "pronoyc11@gmail.com",
   phone: "+880 1795197767",
   whatsapp: "+8801795197767",

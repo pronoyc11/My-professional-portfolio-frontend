@@ -4,48 +4,62 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { heroData } from "@/data/hero";
 
-const positions = [
-  { x: -120, y: -80 },
-  { x: 120, y: -60 },
-  { x: -120, y: 120 },
-  { x: 120, y: 110 },
-  { x: 0, y: -150 },
-  { x: 0, y: 160 },
+const tagPositions = [
+  "left-[8%] top-[8%]",
+  "right-[8%] top-[8%]",
+  "right-[-12%] top-[43%]",
+  "right-[7%] bottom-[8%]",
+  "bottom-[-1%] left-1/2 -translate-x-1/2",
+  "left-[-12%] top-[43%]",
 ];
 
 export default function HeroImage() {
   return (
-    <div className="relative mx-auto flex w-full max-w-[340px] justify-center overflow-hidden">
-      <div className="pointer-events-none absolute left-[-28px] top-8 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
-      <div className="pointer-events-none absolute right-[-20px] top-24 h-48 w-48 rounded-full bg-slate-300/10 blur-3xl" />
+    <div className="relative mx-auto aspect-square w-full max-w-[520px]">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[78%] w-[78%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(125,211,252,0.2),rgba(138,184,255,0.08)_42%,transparent_72%)] blur-[32px]" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[62%] w-[62%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.06] blur-[54px]" />
 
-      <motion.div
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut" }}
-        className="relative z-10 overflow-hidden rounded-full border border-white/10 bg-white/5 p-2 shadow-[0_34px_90px_-55px_rgba(0,0,0,0.7)]"
-      >
-        <Image
-          src={heroData.profileImage}
-          alt={heroData.name}
-          width={340}
-          height={340}
-          priority
-          className="aspect-auto rounded-full object-cover"
-        />
-      </motion.div>
-
-      {heroData.floatingTech.map((tech, index) => (
+      <div className="absolute left-1/2 top-1/2 z-10 w-[min(70vw,340px)] -translate-x-1/2 -translate-y-1/2">
         <motion.div
-          key={tech}
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1, y: [0, -6, 0] }}
-          transition={{ delay: index * 0.25, duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute z-20 rounded-full border border-white/10 bg-[#06080f]/95 px-4 py-2 text-sm text-slate-100 backdrop-blur-xl shadow-[0_16px_40px_-24px_rgba(0,0,0,0.6)] max-sm:hidden"
-          style={{ transform: `translate(${positions[index]?.x ?? 0}px, ${positions[index]?.y ?? 0}px)` }}
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut" }}
+          className="overflow-hidden rounded-full border border-white/10 bg-white/5 p-2 shadow-[0_34px_90px_-55px_rgba(0,0,0,0.7)]"
         >
-          {tech}
+          <Image
+            src={heroData.profileImage}
+            alt={heroData.name}
+            width={340}
+            height={340}
+            priority
+            className="aspect-auto rounded-full object-cover"
+          />
         </motion.div>
-      ))}
+      </div>
+
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-20 max-sm:hidden">
+        {heroData.floatingTech.map((tech, index) => (
+          <div key={tech} className={`absolute ${tagPositions[index]}`}>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94 }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                x: [0, index % 2 === 0 ? 5 : -5, 0],
+                y: [0, index % 3 === 0 ? -7 : 7, 0],
+              }}
+              transition={{
+                delay: index * 0.18,
+                duration: 4.6 + index * 0.25,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="whitespace-nowrap rounded-full border border-white/10 bg-[#06080f]/95 px-4 py-2 text-sm text-slate-100 shadow-[0_16px_40px_-24px_rgba(0,0,0,0.6)] backdrop-blur-xl"
+            >
+              {tech}
+            </motion.div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
